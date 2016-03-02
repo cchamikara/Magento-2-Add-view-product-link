@@ -1,0 +1,16 @@
+<?php
+/**
+ * @var $block \Muaw\ViewProduct\Block\ViewProduct
+ */
+?>
+<?php
+$_product = $block->getCurrentProduct();
+$_baseUrl = $block->getBaseUrl();
+$_seoUrl =  $_baseUrl.$_product->getUrlKey().'.html';
+?>
+<?php if($_id = $_product->getId()): // this if condition will avoiding display the link if product is not created yet?>
+<div class="product-view-url">
+    <a href="<?php echo $_baseUrl.'catalog/product/view/id/'.$_id;?>" target="_blank">Preview Product</a>
+     / <a href="<?php echo $_seoUrl;?>" target="_blank">View Product</a>
+</div>
+<?php endif; ?>
